@@ -1,6 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
-        "stack": "cpp"
+        "stack": "cpp",
+        "sum_of_nodes_having_even_grandparents": "cpp"
     }
 }
