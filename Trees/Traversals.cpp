@@ -1,4 +1,7 @@
 #include <iostream>
+#include<queue>
+#include<vector>
+#include<stack>
 using namespace std;
 
 class Node {
@@ -38,8 +41,65 @@ void preOrder(Node* root){
      cout << root -> data << " ";
     preOrder(root->left);
     preOrder(root->right);
-    
+       
 }
+
+vector<int>levelOrder(Node* root){
+    queue<Node*>q;
+    q.push(root);
+    vector<int>ans;
+    Node* temp;   
+
+    while(!q.empty()){
+        temp = q.front();
+        q.pop();
+
+        ans.push_back(temp->data);
+
+        // left side
+        if(temp->left)
+        q.push(temp->left);
+
+        if( temp -> right)
+        q.push(temp->right);
+    }
+    return ans;
+}
+
+int size(Node* root){
+    
+    if(root == NULL)
+    return 0;
+
+    return (1+ size(root->left) + size(root->right));
+
+}
+
+int totalSum(Node*root){
+    if(root == NULL)
+    return 0;
+   
+   return ( root->value + totalSum(root->left) + totalSum(root->right));
+  
+}
+
+int height(Node* root){
+    if( root == NUll)
+      return 0;
+
+      return ( 1+ max(height(root->left) , height(root->right)));
+}
+
+void countLeaf(Node* root, int &count){
+    if( root == NULL)
+    return;
+    if( !root->left & !root->right){
+        count++;
+        return;
+    }
+     countleaf(root->left, count);
+     countLeaf(root->right, count);
+  }
 
 Node* BinaryTree() {
     int x;
@@ -68,4 +128,12 @@ int main() {
 
    cout << "\nPreOrder: ";
     preOrder(root);
+
+    vector<int>result = levelOrder(root);
+    cout << "\nLevelOrder: ";
+    for (int val : result) {
+        cout << val << " ";
+    }
+
+    return 0; 
 }
