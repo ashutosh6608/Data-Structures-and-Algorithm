@@ -1,0 +1,7 @@
+# Ignore all .exe files (Windows executables)
+*.exe
+
+# Optional: ignore build outputs
+/build/
+/out/
+/bin/
