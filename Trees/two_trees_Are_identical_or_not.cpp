@@ -28,6 +28,18 @@ bool isIdentical(Node* root1 , Node* root2){
            isIdentical(root1->right, root2->right);
 }
 
+void Mirror(Node* root){
+
+    if( root == NULL)
+    return;
+    
+ Node* temp = root->right;
+ root->right = root->left;
+ root->left = temp;
+ Mirror(root->left);
+ Mirror(root->right);
+}
+
 int main() {
     Node* root1 = new Node(1);
     root1->left = new Node(2);

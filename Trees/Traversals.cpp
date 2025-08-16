@@ -90,6 +90,8 @@ int height(Node* root){
       return ( 1+ max(height(root->left) , height(root->right)));
 }
 
+
+
 void countLeaf(Node* root, int &count){
     if( root == NULL)
     return;
