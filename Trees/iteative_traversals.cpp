@@ -48,7 +48,38 @@ vector<int>PostOrder(Node* root){
 // LNR ///
 vector<int>inOrder(Node*root){
     stack<Node*>st;
-    
-    st.push()
+    stack<bool>visited;
+    st.push(root);
+    visited.push(0);
+    vector<int>ans;
+    while(!st.empty()){
+        Node* temp = st.top();
+        st.pop();
+        bool flag = visited.top();
+        visited.pop();
+
+        // First time vistt
+
+   if(flag == 0){
+        if(temp->right){
+            s.push(temp->right);
+            visited.push(0);
+        }
+        // node
+        s.push(temp);
+        visited.push(1);
+
+        // left
+       if(temp->right){
+            s.push(temp->right);
+            visited.push(0);
+        }
+   }
+
+        // second time visit
+        else 
+        ans.push_back(temp->data);
+    }
+       return ans;
 }
  

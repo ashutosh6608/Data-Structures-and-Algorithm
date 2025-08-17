@@ -3,6 +3,7 @@
     "files.associations": {
         "stack": "cpp",
         "sum_of_nodes_having_even_grandparents": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "vector": "cpp"
     }
 }
